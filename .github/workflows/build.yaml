@@ -12,7 +12,7 @@ env:
   PROJECT_ID: gravitate-registry
   REGION: us-central1
   APP_NAME: geo-cache
-  BUILD_PATH: geo-cache/**
+  BUILD_PATH: geo-cache
 
 
 jobs:
