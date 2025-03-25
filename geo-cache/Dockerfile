@@ -1,5 +1,9 @@
-FROM node:7.5.0
-ADD package.json .
-RUN npm install
-ADD lib lib
-CMD ["node", "--harmony", "lib/index.js"]
+FROM golang:1.14
+
+WORKDIR /go/src/app
+COPY . .
+
+RUN go get -d -v ./...
+RUN go install -v ./...
+
+CMD ["go", "run", "/go/src/app/main.go"]
